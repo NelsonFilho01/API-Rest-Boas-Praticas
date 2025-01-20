@@ -36,7 +36,7 @@ public class Pet {
 
     private Boolean adotado;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Abrigo abrigo;
 
     @OneToOne(mappedBy = "pet")
