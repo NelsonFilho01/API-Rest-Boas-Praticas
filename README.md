@@ -20,3 +20,4 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[MySQL](https://www.mysql.com)**
 - **[Hibernate](https://hibernate.org)**
 - **[Flyway](https://flywaydb.org)**
+- **[MailTrap](https://mailtrap.io/)**

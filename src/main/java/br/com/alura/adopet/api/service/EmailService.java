@@ -14,7 +14,7 @@ public class EmailService {
 
     public void enviarEmail(String to, String subject, String menssage) {
         SimpleMailMessage email = new SimpleMailMessage();
-        email.setFrom("adopet@email.com.br");
+        email.setFrom("sandbox.smtp.mailtrap.io");
         email.setTo(to);
         email.setSubject(subject);
         email.setText(menssage);
