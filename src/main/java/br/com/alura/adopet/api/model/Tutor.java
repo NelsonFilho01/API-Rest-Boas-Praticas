@@ -1,5 +1,7 @@
 package br.com.alura.adopet.api.model;
 
+import br.com.alura.adopet.api.dto.AtualizarTutorDto;
+import br.com.alura.adopet.api.dto.CadastrarTutorDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -30,6 +32,10 @@ public class Tutor {
 
     @OneToMany(mappedBy = "tutor")
     private List<Adocao> adocoes;
+
+    public Tutor() {}
+    public Tutor(CadastrarTutorDto dto) {
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -82,5 +88,11 @@ public class Tutor {
 
     public void setAdocoes(List<Adocao> adocoes) {
         this.adocoes = adocoes;
+    }
+
+    public void atualizatDados(AtualizarTutorDto dto) {
+        this.nome = dto.nome();
+        this.telefone = dto.telefone();
+        this.email = dto.email();
     }
 }

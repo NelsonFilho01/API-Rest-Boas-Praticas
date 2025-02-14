@@ -1,5 +1,6 @@
 package br.com.alura.adopet.api.model;
 
+import br.com.alura.adopet.api.dto.CadastroPetDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -10,6 +11,20 @@ import java.util.Objects;
 @Entity
 @Table(name = "pets")
 public class Pet {
+
+    public Pet(){}
+
+    public Pet(CadastroPetDto dto, Abrigo abrigo) {
+        this.tipo = dto.tipo();
+        this.nome = dto.nome();
+        this.raca = dto.raca();
+        this.idade = dto.idade();
+        this.cor = dto.cor();
+        this.peso = dto.peso();
+        this.abrigo = abrigo;
+        this.adotado = false;
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
